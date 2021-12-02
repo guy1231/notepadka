@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,12 +47,11 @@ namespace super_idol
         private void button2_Click(object sender, EventArgs e)
         {
             var thetime = DateTime.UtcNow;
-            textBox2.Text = "\r\n[" + thetime + "]" + ": loaded";
             textBox1.Text = Properties.Settings.Default.text;
             textBox1.Font = Properties.Settings.Default.font;
             textBox1.BackColor = Properties.Settings.Default.bgcolor;
             textBox1.ForeColor = Properties.Settings.Default.txtcolor;
-            textBox2.Text = Properties.Settings.Default.log;
+            textBox2.Text = Properties.Settings.Default.log + "\r\n[" + thetime + "]" + ": loaded";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,7 +67,7 @@ namespace super_idol
             if (fontDialog1.ShowDialog() == DialogResult.OK )
             {
                 textBox1.Font = fontDialog1.Font;
-                textBox2.Text = "\r\n[" + thetime + "]" + ": added font";
+                textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": added font";
             }
         }
 
@@ -78,7 +77,7 @@ namespace super_idol
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.BackColor = colorDialog1.Color;
-                textBox2.Text = "\r\n[" + thetime + "]" + ": added bgcolor";
+                textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": added bgcolor";
             }
         }
 
@@ -88,7 +87,7 @@ namespace super_idol
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.ForeColor = colorDialog1.Color;
-                textBox2.Text = "\r\n[" + thetime + "]" + ": added txtcolor";
+                textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": added txtcolor";
             }
         }
 
@@ -98,7 +97,7 @@ namespace super_idol
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
-                textBox2.Text = "\r\n[" + thetime + "]" + ": added image";
+                textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": added image";
             }
         }
 
@@ -152,14 +151,14 @@ namespace super_idol
         {
             Properties.Settings.Default.Reset();
             var thetime = DateTime.UtcNow;
-            textBox2.Text = "\r\n[" + thetime + "]" + ": erased save";
+            textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": erased save";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reload();
             var thetime = DateTime.UtcNow;
-            textBox2.Text = "\r\n[" + thetime + "]" + ": reloaded save";
+            textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": reloaded save";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -179,7 +178,7 @@ namespace super_idol
         private void сохранитьToolStripButton_Click(object sender, EventArgs e)
         {
             var thetime = DateTime.UtcNow;
-            textBox2.Text = "\r\n[" + thetime + "]" + ": saved";
+            textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": saved";
             Properties.Settings.Default.text = textBox1.Text;
             Properties.Settings.Default.font = textBox1.Font;
             Properties.Settings.Default.bgcolor = textBox1.BackColor;
@@ -191,12 +190,11 @@ namespace super_idol
         private void открытьToolStripButton_Click(object sender, EventArgs e)
         {
             var thetime = DateTime.UtcNow;
-            textBox2.Text = "\r\n[" + thetime + "]" + ": loaded";
+            textBox2.Text = Properties.Settings.Default.log + "\r\n[" + thetime + "]" + ": loaded";
             textBox1.Text = Properties.Settings.Default.text;
             textBox1.Font = Properties.Settings.Default.font;
             textBox1.BackColor = Properties.Settings.Default.bgcolor;
             textBox1.ForeColor = Properties.Settings.Default.txtcolor;
-            textBox2.Text = Properties.Settings.Default.log;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

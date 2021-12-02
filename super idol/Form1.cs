@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -64,7 +65,7 @@ namespace super_idol
         private void button3_Click(object sender, EventArgs e)
         {
             var thetime = DateTime.UtcNow;
-            if (fontDialog1.ShowDialog() == DialogResult.OK )
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Font = fontDialog1.Font;
                 textBox2.Text = textBox2.Text + "\r\n[" + thetime + "]" + ": added font";
@@ -108,7 +109,7 @@ namespace super_idol
             {
                 label4.Text = "C++ (determined by library)";
             }
-            else if(textBox1.Text.Contains("import"))
+            else if (textBox1.Text.Contains("import"))
             {
                 label4.Text = "Python (determined by library)";
             }
@@ -165,8 +166,8 @@ namespace super_idol
         {
             var thetime = DateTime.UtcNow;
             Process proc = Process.GetCurrentProcess();
-            textBox3.Text =  proc.PrivateMemorySize64.ToString();
-            textBox4.Text =  CalculateFrameRate().ToString();
+            textBox3.Text = proc.PrivateMemorySize64.ToString();
+            textBox4.Text = CalculateFrameRate().ToString();
             textBox5.Text = thetime.ToString();
         }
 
@@ -235,5 +236,34 @@ namespace super_idol
             rnd2.Next(1, 254);
             rnd3.Next(1, 254);
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var thetime = DateTime.UtcNow;
+            openFileDialog2.Title = "open txt";
+            openFileDialog2.Filter = "txt files (*.txt)|*.txt";
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader read = new StreamReader(File.OpenRead(openFileDialog2.FileName));
+                textBox1.Text = read.ReadToEnd();
+                read.Dispose();
+                textBox2.Text = Properties.Settings.Default.log + "\r\n[" + thetime + "]" + ": loaded file";
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            var thetime = DateTime.UtcNow;
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog1.Title = "save txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter write = new StreamWriter(File.Create(saveFileDialog1.FileName));
+                write.Write(textBox1.Text);
+                write.Dispose();
+                textBox2.Text = Properties.Settings.Default.log + "\r\n[" + thetime + "]" + ": saved file";
+            }
+        }
+
     }
 }

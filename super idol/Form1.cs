@@ -265,5 +265,66 @@ namespace super_idol
             }
         }
 
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.BackColor = Color.Black;
+            linkLabel1.BackColor = Color.Black;
+            linkLabel1.ForeColor = Color.White;
+            linkLabel2.BackColor = Color.Black;
+            linkLabel2.ForeColor = Color.White;
+            linkLabel3.BackColor = Color.Black;
+            linkLabel3.ForeColor = Color.White;
+            linkLabel4.BackColor = Color.Black;
+            linkLabel4.ForeColor = Color.White;
+            button1.BackColor = Color.Black;
+            button1.ForeColor = Color.White;
+            button2.BackColor = Color.Black;
+            button2.ForeColor = Color.White;
+            button3.BackColor = Color.Black;
+            button3.ForeColor = Color.White;
+            button4.BackColor = Color.Black;
+            button4.ForeColor = Color.White;
+            button5.BackColor = Color.Black;
+            button5.ForeColor = Color.White;
+            button6.BackColor = Color.Black;
+            button6.ForeColor = Color.White;
+            button7.BackColor = Color.Black;
+            button7.ForeColor = Color.White;
+            button8.BackColor = Color.Black;
+            button8.ForeColor = Color.White;
+            button9.BackColor = Color.Black;
+            button9.ForeColor = Color.White;
+            button10.BackColor = Color.Black;
+            button10.ForeColor = Color.White;
+            button13.BackColor = Color.Black;
+            button13.ForeColor = Color.White;
+            button12.BackColor = Color.Black;
+            button12.ForeColor = Color.White;
+            label1.BackColor = Color.Black;
+            label1.ForeColor = Color.White;
+            label2.BackColor = Color.Black;
+            label2.ForeColor = Color.White;
+            label3.BackColor = Color.Black;
+            label3.ForeColor = Color.White;
+            label4.BackColor = Color.Black;
+            label4.ForeColor = Color.White;
+            label5.BackColor = Color.Black;
+            label5.ForeColor = Color.White;
+            label6.BackColor = Color.Black;
+            label6.ForeColor = Color.White;
+            label7.BackColor = Color.Black;
+            label7.ForeColor = Color.White;
+            label8.BackColor = Color.Black;
+            label8.ForeColor = Color.White;
+            label9.BackColor = Color.Black;
+            label9.ForeColor = Color.White;
+            label10.BackColor = Color.Black;
+            label10.ForeColor = Color.White;
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

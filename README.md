@@ -4,4 +4,4 @@ if you want to download the app itself: https://cdn.discordapp.com/attachments/8
 enjoy!
 *!unpack before using!*
 
-i have been coding on c# for only like 5 months so dont judge me too hard
+i have been coding on c# for only like 5 months
